@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "Voice-iOS-SDK"
   s.version      = "0.0.1"
-  s.summary      = "A short description of Voice-iOS-SDK."
+  s.summary      = "iOS SDK for voice polls API"
 
   s.description  = <<-DESC
                    A longer description of Voice-iOS-SDK in Markdown format.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
                    * Finally, don't worry about the indent, CocoaPods strips it!
                    DESC
 
-  s.homepage     = "http://EXAMPLE/Voice-iOS-SDK"
+  s.homepage     = "http://voicepolls.com"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -77,7 +77,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "git://github.com/voice/Voice-iOS-SDK.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/voice/Voice-iOS-SDK.git", :tag => "v0.0.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -89,7 +89,7 @@ Pod::Spec.new do |s|
   #
 
   s.source_files  = "VoiceSDK", "VoiceSDK/**/*.{h,m}"
-
+  s.exclude_files = "VoiceSDK/VoiceSDKTests", "VoiceSDK/VoiceSDKTests/*"
   s.public_header_files = "VoiceSDK/VoiceSDK/VoiceSDK.h"
 
 
