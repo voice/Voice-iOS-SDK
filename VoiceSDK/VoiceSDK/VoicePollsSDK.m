@@ -21,6 +21,9 @@ Singleton(VoicePollsSDK)
 
 - (void)getMyQuestions:(void(^)(NSArray *questions))success failure:(void(^)(NSError *error))failure {
     NSString *bundlePath = [NSBundle mainBundle].bundleIdentifier;
+    if (!bundlePath) {
+        bundlePath = @"";
+    }
     [VPRequest get:[NSString stringWithFormat:@"users/%@/questions", self.publisherId] withParameters:@{@"URL":bundlePath} success:^(NSData *response) {
         NSError *error = nil;
         NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:&error];
@@ -33,6 +36,9 @@ Singleton(VoicePollsSDK)
 
 - (void)vote:(NSNumber *)vote onQuestion:(NSString *)questionId success:(void(^)(NSData *response))success failure:(void(^)(NSError *error))failure {
     NSString *bundlePath = [NSBundle mainBundle].bundleIdentifier;
+    if (!bundlePath) {
+        bundlePath = @"";
+    }
     [VPRequest post:[NSString stringWithFormat:@"questions/%@/vote/%@",questionId, [vote stringValue]]
       withParameter:@{@"URL":bundlePath}
             success:^(NSData *response) {
@@ -58,6 +64,17 @@ Singleton(VoicePollsSDK)
 
 - (void)getQuestionWithId:(NSString *)questionId success:(void(^)(NSDictionary *question))success failure:(void(^)(NSError *error))failure {
     [VPRequest get:[NSString stringWithFormat:@"questions/%@", questionId] withParameters:@{} success:^(NSData *response) {
+        NSError *error = nil;
+        NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:&error];
+        NSDictionary *ret = resp[@"response"];
+        success(ret);
+    } failure:^(NSError *error) {
+        failure(error);
+    }];
+}
+
+- (void)getQuestionsInTag:(NSString *)tagName success:(void(^)(NSDictionary *question))success failure:(void(^)(NSError *error))failure {
+    [VPRequest get:[NSString stringWithFormat:@"tags/%@/questions", tagName] withParameters:@{} success:^(NSData *response) {
         NSError *error = nil;
         NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:&error];
         NSDictionary *ret = resp[@"response"];

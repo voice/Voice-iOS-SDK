@@ -80,6 +80,22 @@
     }
 }
 
+
+- (void)testQuestionInTag {
+    __block BOOL canPass  = false;
+    [[VoicePollsSDK sharedInstance] getQuestionsInTag:@"voice" success:^(NSDictionary *question) {
+        XCTAssert(YES);
+        canPass = YES;
+    } failure:^(NSError *error) {
+        XCTAssert(NO);
+        canPass = YES;
+    }];
+    while (!canPass) {
+        
+    }
+}
+
+
 - (void)testSet {
     __block BOOL canPass  = false;
     [[VoicePollsSDK sharedInstance] getQuestionsInSet:@"54" success:^(NSArray *questions) {

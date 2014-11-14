@@ -18,7 +18,7 @@ Singleton(VPRequest);
         NSURLSession *session = [NSURLSession sharedSession];
         session.configuration.HTTPAdditionalHeaders = @{@"client_id": @"voiceSdk"};
         NSString *str = [NSString stringWithFormat:@"%@%@",VP_BASE_URL, endPoint];
-        if (param) {
+        if (param && param.count > 0) {
             str = [str stringByAppendingString:@"?"];
             for (NSString *key in param.allKeys) {
                 str = [str stringByAppendingString:[NSString stringWithFormat:@"&%@=%@",key, param[key]]];

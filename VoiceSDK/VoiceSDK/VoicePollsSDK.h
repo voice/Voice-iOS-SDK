@@ -17,5 +17,9 @@
 - (void)getQuestionsInSet:(NSString *)setId success:(void(^)(NSArray *questions))success failure:(void(^)(NSError *error))failure;
 
 - (void)getQuestionWithId:(NSString *)questionId success:(void(^)(NSDictionary *question))success failure:(void(^)(NSError *error))failure;
+
 - (void)vote:(NSNumber *)vote onQuestion:(NSString *)questionId success:(void(^)(NSData *response))success failure:(void(^)(NSError *error))failure;
+
+- (void)getQuestionsInTag:(NSString *)tagName success:(void(^)(NSDictionary *question))success failure:(void(^)(NSError *error))failure;
+
 @end
