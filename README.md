@@ -1,7 +1,7 @@
 # Voice Polls SDK and API documentation
 
 ## How to add polls to your site or native app
-![Voice Embed](/images/voiceEmbed)
+![Voice Embed](/images/voiceEmbed.png)
 
 [Voice Polls](https://voicepolls.com) are a great way to give your audience a voice. This documentation is intended for developers who want to integrate polls into their website or native app.
 
@@ -43,7 +43,7 @@ customization](https://voicepolls.com/publisher/account/theme)).
 
 Voice HTTPS/JSON-based API
 
-![Voice voiceRealTime](/images/voiceRealTime)
+![Voice voiceRealTime](/images/voiceRealTime.png)
 
 ###### Automatically update your embedded content
 
@@ -52,7 +52,7 @@ website *without* changing the code you used to integrate Voice polls,
 this is for you. On the website you can make sure the embed will always
 fetch your latest poll or survey.
 
-![Voice publisher](/images/voicePublisher)
+![Voice publisher](/images/voicePublisher.png)
 
 When embedding your polls via the embed code or the iOS SDK, simply make
 sure it includes the user id rather than the poll or the survey id.
