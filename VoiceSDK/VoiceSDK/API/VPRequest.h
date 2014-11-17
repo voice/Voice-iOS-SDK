@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSString *publisherId;
 
 
-+ (void)get:(NSString *)endPoint withParameters:(NSDictionary *)param success:(void(^)(NSData *response))success failure:(void(^)(NSError *error))failure;
++ (void)get:(NSString *)endPoint withParameters:(NSDictionary *)param success:(void(^)(NSDictionary *response))success failure:(void(^)(NSError *error))failure;
 
 + (void)post:(NSString *)endPoint withParameter:(NSDictionary *)param success:(void(^)(NSData *response))success failure:(void(^)(NSError *error))failure;
 

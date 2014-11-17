@@ -13,7 +13,7 @@
 @implementation VPRequest
 Singleton(VPRequest);
 
-+ (void)get:(NSString *)endPoint withParameters:(NSDictionary *)param success:(void(^)(NSData *response))success failure:(void(^)(NSError *error))failure {
++ (void)get:(NSString *)endPoint withParameters:(NSDictionary *)param success:(void(^)(NSDictionary *response))success failure:(void(^)(NSError *error))failure {
     if ([VPRequest sharedInstance].publisherId && ![[VPRequest sharedInstance].publisherId isEqualToString:@""]) {
         NSURLSession *session = [NSURLSession sharedSession];
         session.configuration.HTTPAdditionalHeaders = @{@"client_id": @"voiceSdk"};
@@ -26,7 +26,9 @@ Singleton(VPRequest);
         }
         [[session dataTaskWithURL:[NSURL URLWithString:str] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             if (!error) {
-                success(data);
+                NSError *parseError = nil;
+                 NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&parseError];
+                success(resp);
             }
             else {
                 failure(error);

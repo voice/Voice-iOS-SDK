@@ -13,7 +13,7 @@
 
 Singleton(VoicePollsSDK)
 
--(void)setPublisherId:(NSString *)publisherId {
+- (void)setPublisherId:(NSString *)publisherId {
     _publisherId = publisherId;
     [VPRequest sharedInstance].publisherId = publisherId;
 
@@ -24,10 +24,8 @@ Singleton(VoicePollsSDK)
     if (!bundlePath) {
         bundlePath = @"";
     }
-    [VPRequest get:[NSString stringWithFormat:@"users/%@/questions", self.publisherId] withParameters:@{@"URL":bundlePath} success:^(NSData *response) {
-        NSError *error = nil;
-        NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:&error];
-        NSArray *ret = resp[@"response"];
+    [VPRequest get:[NSString stringWithFormat:@"users/%@/questions", self.publisherId] withParameters:@{@"URL":bundlePath} success:^(NSDictionary *response) {
+        NSArray *ret = response[@"response"];
         success(ret);
     } failure:^(NSError *error) {
         failure(error);
@@ -50,10 +48,10 @@ Singleton(VoicePollsSDK)
 }
 
 - (void)getQuestionsInSet:(NSString *)setId success:(void(^)(NSArray *questions))success failure:(void(^)(NSError *error))failure {
-    [VPRequest get:[NSString stringWithFormat:@"sets/%@", setId] withParameters:nil success:^(NSData *response) {
-        NSError *error = nil;
-        NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:&error];
-        NSDictionary *set = resp[@"response"];
+    [VPRequest get:[NSString stringWithFormat:@"sets/%@", setId] withParameters:nil success:^(NSDictionary *response) {
+
+       
+        NSDictionary *set = response[@"response"];
         NSArray *questions = set[@"questions"];
         success(questions);
     } failure:^(NSError *error) {
@@ -63,10 +61,8 @@ Singleton(VoicePollsSDK)
 }
 
 - (void)getQuestionWithId:(NSString *)questionId success:(void(^)(NSDictionary *question))success failure:(void(^)(NSError *error))failure {
-    [VPRequest get:[NSString stringWithFormat:@"questions/%@", questionId] withParameters:nil success:^(NSData *response) {
-        NSError *error = nil;
-        NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:&error];
-        NSDictionary *ret = resp[@"response"];
+    [VPRequest get:[NSString stringWithFormat:@"questions/%@", questionId] withParameters:nil success:^(NSDictionary *response) {
+        NSDictionary *ret = response[@"response"];
         success(ret);
     } failure:^(NSError *error) {
         failure(error);
@@ -74,10 +70,8 @@ Singleton(VoicePollsSDK)
 }
 
 - (void)getQuestionsInTag:(NSString *)tagName success:(void(^)(NSDictionary *question))success failure:(void(^)(NSError *error))failure {
-    [VPRequest get:[NSString stringWithFormat:@"tags/%@/questions", tagName] withParameters:nil success:^(NSData *response) {
-        NSError *error = nil;
-        NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:response options:kNilOptions error:&error];
-        NSDictionary *ret = resp[@"response"];
+    [VPRequest get:[NSString stringWithFormat:@"tags/%@/questions", tagName] withParameters:nil success:^(NSDictionary *response) {
+        NSDictionary *ret = response[@"response"];
         success(ret);
     } failure:^(NSError *error) {
         failure(error);
