@@ -16,16 +16,12 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "Voice-iOS-SDK"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "iOS SDK for voice polls API"
 
   s.description  = <<-DESC
-                   A longer description of Voice-iOS-SDK in Markdown format.
-
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
+			#Voice Polls SDK
+			This framework allows you to fetch questions from https://voicepolls.com.                     
                    DESC
 
   s.homepage     = "http://voicepolls.com"
@@ -77,7 +73,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/voice/Voice-iOS-SDK.git", :tag => "v0.0.1" }
+  s.source       = { :git => "https://github.com/voice/Voice-iOS-SDK.git", :tag => "v0.0.2" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -126,7 +122,7 @@ Pod::Spec.new do |s|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+  s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
