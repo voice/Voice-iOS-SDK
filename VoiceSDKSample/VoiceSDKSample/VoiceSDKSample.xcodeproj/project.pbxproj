@@ -16,8 +16,8 @@
 		8D3573501A13CDFC00039902 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D35734F1A13CDFC00039902 /* Images.xcassets */; };
 		8D3573531A13CDFC00039902 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D3573511A13CDFC00039902 /* LaunchScreen.xib */; };
 		8D35735F1A13CDFC00039902 /* VoiceSDKSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D35735E1A13CDFC00039902 /* VoiceSDKSampleTests.m */; };
-		8DBE563D1A15499800BA7E16 /* VoiceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBE563C1A15499800BA7E16 /* VoiceSDK.framework */; };
-		8DBE563E1A15499800BA7E16 /* VoiceSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBE563C1A15499800BA7E16 /* VoiceSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8DD9447B1A169E86007A4AD3 /* VoiceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD9447A1A169E86007A4AD3 /* VoiceSDK.framework */; };
+		8DD9447C1A169E86007A4AD3 /* VoiceSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD9447A1A169E86007A4AD3 /* VoiceSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8DBE563E1A15499800BA7E16 /* VoiceSDK.framework in Embed Frameworks */,
+				8DD9447C1A169E86007A4AD3 /* VoiceSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,7 +62,7 @@
 		8D3573581A13CDFC00039902 /* VoiceSDKSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceSDKSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D35735D1A13CDFC00039902 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D35735E1A13CDFC00039902 /* VoiceSDKSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceSDKSampleTests.m; sourceTree = "<group>"; };
-		8DBE563C1A15499800BA7E16 /* VoiceSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = VoiceSDK.framework; path = "/Users/alexandrebarbier/Library/Developer/Xcode/DerivedData/VoiceSDK-ejdqiyezctnmhxbfkkvjsdawzjdt/Build/Products/Debug-iphoneos/VoiceSDK.framework"; sourceTree = "<absolute>"; };
+		8DD9447A1A169E86007A4AD3 /* VoiceSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = VoiceSDK.framework; path = "/Users/alexandrebarbier/Library/Developer/Xcode/DerivedData/VoiceSDK-cwiqoimgdbajsucwcucqxoqoiygx/Build/Products/Debug-iphoneos/VoiceSDK.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DBE563D1A15499800BA7E16 /* VoiceSDK.framework in Frameworks */,
+				8DD9447B1A169E86007A4AD3 /* VoiceSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +87,7 @@
 		8D3573361A13CDFC00039902 = {
 			isa = PBXGroup;
 			children = (
-				8DBE563C1A15499800BA7E16 /* VoiceSDK.framework */,
+				8DD9447A1A169E86007A4AD3 /* VoiceSDK.framework */,
 				8D3573411A13CDFC00039902 /* VoiceSDKSample */,
 				8D35735B1A13CDFC00039902 /* VoiceSDKSampleTests */,
 				8D3573401A13CDFC00039902 /* Products */,
@@ -381,6 +381,7 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/VoiceSDK-ectcygonuojbuhfzbxcsliuacnsw/Build/Products/Debug-iphoneos",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/VoiceSDK-ejdqiyezctnmhxbfkkvjsdawzjdt/Build/Products/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/VoiceSDK-cwiqoimgdbajsucwcucqxoqoiygx/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = VoiceSDKSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -396,6 +397,7 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/VoiceSDK-ectcygonuojbuhfzbxcsliuacnsw/Build/Products/Debug-iphoneos",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/VoiceSDK-ejdqiyezctnmhxbfkkvjsdawzjdt/Build/Products/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/VoiceSDK-cwiqoimgdbajsucwcucqxoqoiygx/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = VoiceSDKSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

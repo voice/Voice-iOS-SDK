@@ -18,8 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //VPQuestionView *question = [[VPQuestionView alloc] initWithFrame:self.view.bounds];
-    [self.questView loadSet:@"56"];
+    self.questView.shouldSizeToFit = YES;
+    [self.questView loadSet:@"56" completion:nil];
     [[VoicePollsSDK sharedInstance] getMyQuestions:^(NSArray *questions) {
         
     } failure:^(NSError *error) {

@@ -90,7 +90,7 @@ Pod::Spec.new do |s|
 
   s.source_files  = "VoiceSDK", "VoiceSDK/**/*.{h,m}"
   s.exclude_files = "VoiceSDK/VoiceSDKTests", "VoiceSDK/VoiceSDKTests/*"
-  s.public_header_files = "VoiceSDK/VoiceSDK/VoiceSDK.h"
+  s.public_header_files = "VoiceSDK/VoiceSDK/VoiceSDK.h", "VoiceSDK/VoiceSDK/VoicePollsSDK.h", "VoiceSDK/VoiceSDK/UI/VPQuestionView.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

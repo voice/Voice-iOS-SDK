@@ -48,7 +48,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self.cellSize[indexPath.row] floatValue];
+    return 480.0;
 }
 
 
@@ -58,13 +58,6 @@
 
 
     [cell.questionView loadQuestion:cell.questionId completion:^{
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            if([[self.questionsId[indexPath.row] stringValue] isEqualToString:cell.questionId] && [[self.cellSize objectAtIndex:indexPath.row] floatValue] == 568) {
-                [tableView beginUpdates];
-                [self.cellSize replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithFloat:cell.questionView.height]];
-                [tableView endUpdates];
-            }
-        }];
 
     }];
     
