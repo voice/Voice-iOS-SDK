@@ -87,7 +87,7 @@ for the pollView UIWebView is 320\*480.
 
 Voice-iOS-SDK is available through CocoaPods. To install it, simply add the following line to your Podfile:
 ```
-pod "Voice-iOS-SDK"
+pod 'Voice-iOS-SDK'
 ```
 You can also add the library as shown in the sample.
 
